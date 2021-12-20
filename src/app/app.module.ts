@@ -9,11 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { ConfigService } from './http.service';
+import { WeatherInfoBoxComponent } from './components/weather-info-box/weather-info-box.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherInfoBoxComponent
   ],
   imports: [
     BrowserModule,

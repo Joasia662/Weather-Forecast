@@ -1,8 +1,8 @@
 <div class="page">
   <div class="glass">
-    <span>
-      <div class="section">
-        <p>Weather Forecast!</p>
+    <span class="glass-content">
+      <div>
+        <p class="title autumn-color">Weather Forecast!</p>
       </div>
       <div class="section">
         <mat-form-field class="example-form-field" appearance="fill">
@@ -13,7 +13,13 @@
           </button>
         </mat-form-field>
       </div>
+      <div class="section">
+        <span style="margin-right: 30px;" *ngFor="let item of weatherInfo?.list">
+          <app-weather-info-box [weatherInfo]=item></app-weather-info-box>
+        </span>
+
+      </div>
     </span>
-   
+
   </div>
 </div>

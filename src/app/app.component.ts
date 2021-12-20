@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IForecast } from './interfaces/IWeather';
-import {ConfigService} from './http.service';
+import {ConfigService} from './services/http.service';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,17 @@ import {ConfigService} from './http.service';
 })
 export class AppComponent implements OnInit {
   title = 'weather-forecast';
-  value = 'Clear me';
+  value = 'Select City';
+  weatherInfo: IForecast | undefined;
+
   constructor(
    private api: ConfigService
   ){}
   ngOnInit(){
-    debugger
-    let tmp: IForecast;
+   
     this.api.getForecastByCity('Cracow')
     .subscribe((res =>{
-
-      debugger
-      tmp=  res;
+      this.weatherInfo=  res;
     }));
   }
 

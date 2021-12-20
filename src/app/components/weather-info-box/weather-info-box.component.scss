@@ -1,0 +1,24 @@
+.section-window{
+    border-radius: 3%;
+}
+
+.container{
+    font-size: 14px;
+    width: 120%;
+    height: 100%;
+    text-align: center;
+    background: rgba(255,255,255,0.3);
+    padding: 10%;
+}
+
+.info-row{
+    display: flex ;
+    justify-content:space-between;
+    &-label{
+        font-size: 14px;
+    };
+    &-value{
+        font-size: 16px;
+        color: #b65c01;
+    };
+}

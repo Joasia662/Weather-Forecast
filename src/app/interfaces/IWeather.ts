@@ -1,9 +1,9 @@
 export interface IForecast {
-    cod: string;
-    message: number;
-    cnt: number;
-    list: IForecastList[];
-    city: {
+    cod?: string;
+    message?: number;
+    cnt?: number;
+    list?: IForecastList[];
+    city?: {
         id: number;
         name: string;
         coord: {
@@ -19,8 +19,8 @@ export interface IForecast {
 }
 
 export interface IForecastList {
-    dt: number;
-    main: {
+    dt?: number;
+    main?: {
         temp: number;
         feels_like: number;
         temp_min: number;
@@ -31,28 +31,28 @@ export interface IForecastList {
         humidity: number;
         temp_kf: number;
     },
-    weather: [{
+    weather?: [{
         id: number;
         main: string;
         description: string;
         icon: string;
     }
     ],
-    clouds: {
+    clouds?: {
         all: number;
     },
-    wind: {
+    wind?: {
         speed: number;
         deg: number;
         gust: number;
     },
-    visibility: number;
-    pop: number;
-    snow: {
+    visibility?: number;
+    pop?: number;
+    snow?: {
         '3h': number;
     },
-    sys: {
+    sys?: {
         pod: string;
     },
-    dt_txt: string;
+    dt_txt?: string;
 }
