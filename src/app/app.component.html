@@ -4,21 +4,25 @@
       <div>
         <p class="title autumn-color">Weather Forecast!</p>
       </div>
-      <div class="section">
-        <mat-form-field class="example-form-field" appearance="fill">
-          <mat-label>Clearable input</mat-label>
-          <input matInput type="text" [(ngModel)]="value">
-          <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
+  
+      <div>
+        <mat-form-field class="example-full-width">
+          <span matPrefix> </span>
+          <input type="text" matInput placeholder="Search Weather For your City" name= "search" (ngModelChange)="onSearchChange($event)"
+          [(ngModel)]= "searchValue">
+          <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+          </mat-form-field>
       </div>
-      <div class="section">
+      <div *ngIf="!weatherEmpty" class="section">
         <span style="margin-right: 30px;" *ngFor="let item of weatherInfo?.list">
           <app-weather-info-box [weatherInfo]=item></app-weather-info-box>
         </span>
 
       </div>
+
+      <div *ngIf="weatherEmpty" class="section">
+        <app-error-message></app-error-message>
+    </div>
     </span>
 
   </div>

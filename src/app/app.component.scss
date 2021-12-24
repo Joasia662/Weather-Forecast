@@ -1,6 +1,7 @@
 
 .page {
-    background-image: url('../assets/autum-trees.jpg');
+    //background-image: url('../assets/autum-trees.jpg');
+    background: linear-gradient( to right bottom, #ffba08 ,#9d0208);
     height: 100%;
     display: flex;
     align-items: center;
@@ -9,8 +10,8 @@
 
 .glass {
     background: white;
-    height: 90%;
-    width: 90%;
+    height: 80%;
+    width: 80%;
     background: linear-gradient( to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.3));
     display: flex;
     justify-content: center;
@@ -29,15 +30,17 @@
     text-align: center;
     display: flex;
     justify-content: space-evenly;
+    max-height: 60%;
 }
 
 .title{
     font-size: 35px;
     margin: 20px;
     font-weight: 500px;
+    color: #03071e;
 }
 .example-form-field {
-    width: 90%;
+    width: 80%;
 }
 
 

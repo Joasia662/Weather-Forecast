@@ -10,11 +10,13 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { WeatherInfoBoxComponent } from './components/weather-info-box/weather-info-box.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherInfoBoxComponent
+    WeatherInfoBoxComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,
