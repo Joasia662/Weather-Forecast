@@ -11,12 +11,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { WeatherInfoBoxComponent } from './components/weather-info-box/weather-info-box.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
+import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherInfoBoxComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    CityInfoBoxComponent
   ],
   imports: [
     BrowserModule,

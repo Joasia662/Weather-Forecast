@@ -9,16 +9,17 @@ import { ConfigService } from './services/http.service';
 })
 export class AppComponent implements OnInit {
   title = 'weather-forecast';
-  searchValue = '';
-  weatherInfo: IForecast | undefined;
+  searchValue = 'Warsaw';
   weatherEmpty = true;
-  errorMessage: string='';
+
+  weatherInfo: IForecast = ({} as any);
+  isMetropollia: boolean = false;
 
   constructor(
     private api: ConfigService
   ) { }
   ngOnInit() {
-    this.getForecast('Cracow');
+    this.getForecast('Warsaw');
   }
 
   onSearchChange(city: string) {
@@ -33,10 +34,10 @@ export class AppComponent implements OnInit {
         next: res => {
           this.weatherInfo = res;
           this.weatherEmpty = false;
+          this.weatherInfo.city?.population > 10000 ? this.isMetropollia = true : this.isMetropollia = false;
         },
         error: ({ err }) => {
           this.weatherEmpty = true;
-          //this.errorMessage=
         }
       });
   }

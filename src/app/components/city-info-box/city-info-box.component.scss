@@ -1,0 +1,21 @@
+.city-info{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    background: linear-gradient( to right bottom, rgba(255,255,255,0.1),rgba(255,255,255,0.1));
+    &-list{
+        width: 20%;
+        margin-right: 35px;
+    }
+    &-row{
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+     &-label{
+         font-weight: bold;
+     }
+    }
+}

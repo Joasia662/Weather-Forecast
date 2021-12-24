@@ -4,26 +4,33 @@
       <div>
         <p class="title autumn-color">Weather Forecast!</p>
       </div>
-  
       <div>
         <mat-form-field class="example-full-width">
           <span matPrefix> </span>
-          <input type="text" matInput placeholder="Search Weather For your City" name= "search" (ngModelChange)="onSearchChange($event)"
-          [(ngModel)]= "searchValue">
-          <button matSuffix mat-button><mat-icon >search</mat-icon></button>
-          </mat-form-field>
+          <input type="text" matInput placeholder="Search Weather For your City" name="search"
+            (ngModelChange)="onSearchChange($event)" [(ngModel)]="searchValue">
+          <button matSuffix mat-button>
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
       </div>
-      <div *ngIf="!weatherEmpty" class="section">
-        <span style="margin-right: 30px;" *ngFor="let item of weatherInfo?.list">
-          <app-weather-info-box [weatherInfo]=item></app-weather-info-box>
-        </span>
+      <ng-container *ngIf="!weatherEmpty;else empty">
+        <div>
+          <app-city-info-box [cityInfo]="weatherInfo.city"></app-city-info-box>
+          </div>
 
-      </div>
-
-      <div *ngIf="weatherEmpty" class="section">
-        <app-error-message></app-error-message>
-    </div>
+        <div class="section">
+          <span style="margin-right: 30px;" *ngFor="let item of weatherInfo?.list">
+            <app-weather-info-box [weatherInfo]=item></app-weather-info-box>
+          </span>
+        </div>
+      </ng-container>
     </span>
-
   </div>
 </div>
+
+<ng-template #empty>
+  <div class="section">
+    <app-error-message></app-error-message>
+  </div>
+</ng-template>

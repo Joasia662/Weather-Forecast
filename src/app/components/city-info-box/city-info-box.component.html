@@ -1,0 +1,53 @@
+<div class="city-info">
+    <span class="city-info-list">
+        <span class="city-info-row">
+            <span class="city-info-row-label">
+                City Name
+            </span>
+            <span class="city-info-row-value">
+                {{cityInfo?.name}}
+            </span>
+        </span> 
+        <span class="city-info-row">
+            <span class="city-info-row-label">
+                Country </span>
+            <span class="city-info-row-value">
+                {{cityInfo?.country}}
+            </span>
+        </span>
+        <span class="city-info-row">
+            <span class="city-info-row-label">
+                Population </span>
+            <span class="city-info-row-value">
+                {{cityInfo?.population}}
+            </span>
+        </span>
+        <span class="city-info-row">
+            <span class="city-info-row-label">
+                Sunrise Time </span>
+            <span class="city-info-row-value">
+                {{cityInfo?.sunrise | date: 'HH:mm'}}
+            </span>
+        </span>
+        <span class="city-info-row">
+            <span class="city-info-row-label">
+                Sunset Time </span>
+            <span class="city-info-row-value">
+                {{cityInfo?.sunset | date: 'HH:mm' }}
+            </span>
+        </span>
+
+        <span class="city-info-row">
+            <span class="city-info-row-label">
+                Coordinations </span>
+            <span class="city-info-row-value">
+                (
+                {{cityInfo.coord?.lat}},
+                {{cityInfo?.coord?.lon}}
+                )
+            </span>
+        </span>
+    </span>
+    <img *ngIf="cityInfo.population<10000" src="/assets/village.png" height="100px" alt="village">
+    <img *ngIf="cityInfo.population>10000" src="/assets/buildings.png" height="100px" alt="city">
+</div>

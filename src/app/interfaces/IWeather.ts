@@ -1,21 +1,9 @@
 export interface IForecast {
-    cod?: string;
-    message?: number;
-    cnt?: number;
-    list?: IForecastList[];
-    city?: {
-        id: number;
-        name: string;
-        coord: {
-            lat: number;
-            lon: number;
-        },
-        country: string;
-        population: number;
-        timezone: number;
-        sunrise: number;
-        sunset: number;
-    }
+    cod: string;
+    message: number;
+    cnt: number;
+    list: IForecastList[];
+    city: IForecastCityInfo;
 }
 
 export interface IForecastList {
@@ -55,4 +43,18 @@ export interface IForecastList {
         pod: string;
     },
     dt_txt?: string;
+}
+
+export interface IForecastCityInfo {
+    id: number;
+    name: string;
+    coord: {
+        lat: number;
+        lon: number;
+    },
+    country: string;
+    population: number;
+    timezone: number;
+    sunrise: number;
+    sunset: number;
 }
