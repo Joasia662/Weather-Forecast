@@ -2,51 +2,16 @@
 <div class="container">
     <div>
         <mat-selection-list #shoes [multiple]="false">
-            <mat-list-option *ngFor="let hour of weatherInfo.hourPeriod">
+            <mat-list-option *ngFor="let hour of weatherInfo.hourPeriod" (click)="openHourDialog(hour)">
                 <mat-icon mat-list-icon>
                     <img [src]="getSafeUrl(hour.weather[0].icon)" height="40px" alt="weather">
                 </mat-icon>
                 <div mat-line> {{hour.weather[0].main}}</div>
                 <div mat-line> {{hour.dt_txt | date: 'HH:mm'}} </div>
             </mat-list-option>
-
         </mat-selection-list>
     </div>
-<!--
-
-    <div class="info-row">
-        <span class="info-row-label">Average Temperature</span>
-        <span class="info-row-value">{{weatherInfo.average_temp | number:'1.2-2'}}K</span>
+    <div>
+        <button mat-button  (click)="openFullDayDialog()">See Full Data</button>
     </div>
-    <div class="info-row">
-        <span class="info-row-label">Max Temperature</span>
-        <span class="info-row-value">{{weatherInfo.max_temp | number:'1.2-2'}}K</span>
-    </div>
-    <div class="info-row">
-        <span class="info-row-label">Min Temperature</span>
-        <span class="info-row-value">{{weatherInfo.min_temp| number:'1.2-2' }}K</span>
-    </div>
-    <div class="info-row">
-        <span class="info-row-label">Feels like Temperature</span>
-        <span class="info-row-value">{{weatherInfo.average_feels | number:'1.2-2'}}K</span>
-    </div>
-    <div class="info-row">
-        <span class="info-row-label">Average Humidity</span>
-        <span class="info-row-value">{{weatherInfo.average_humidity| number:'1.2-2' }}%</span>
-    </div>
-    <div class="info-row">
-        <span class="info-row-label">Average Wind Speed</span>
-        <span class="info-row-value">{{weatherInfo.average_windSpeed| number:'1.2-2' }}m/s</span>
-    </div>
-    <div class="info-row">
-        <span class="info-row-label">Average Visability</span>
-        <span class="info-row-value">{{weatherInfo.average_visability| number:'1.2-2' }}km</span>
-    </div>
-    <div *ngIf="weatherInfo.average_snow" class="info-row">
-        <span class="info-row-label">Average Snow</span>
-        <span class="info-row-value">{{weatherInfo.average_snow| number:'1.2-2' }}</span>
-    </div>
-
--->
-
 </div>

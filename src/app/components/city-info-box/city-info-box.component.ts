@@ -23,7 +23,8 @@ export class CityInfoBoxComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+    this.cityInfo.sunrise+=1000;
+    this.cityInfo.sunset+=1000;
   }
 
 }

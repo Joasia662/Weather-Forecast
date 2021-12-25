@@ -1,0 +1,32 @@
+<div class="info-row">
+    <span class="info-row-label">Average Temperature</span>
+    <span class="info-row-value">{{weatherInfo.average_temp | number:'1.2-2'}}&nbsp;K</span>
+</div>
+<div class="info-row">
+    <span class="info-row-label">Max Temperature</span>
+    <span class="info-row-value">{{weatherInfo.max_temp | number:'1.2-2'}}&nbsp;K</span>
+</div>
+<div class="info-row">
+    <span class="info-row-label">Min Temperature</span>
+    <span class="info-row-value">{{weatherInfo.min_temp| number:'1.2-2' }}&nbsp;K</span>
+</div>
+<div class="info-row">
+    <span class="info-row-label">Feels like Temperature</span>
+    <span class="info-row-value">{{weatherInfo.average_feels | number:'1.2-2'}}&nbsp;K</span>
+</div>
+<div class="info-row">
+    <span class="info-row-label">Average Humidity</span>
+    <span class="info-row-value">{{weatherInfo.average_humidity| number:'1.2-2' }}&nbsp;%</span>
+</div>
+<div class="info-row">
+    <span class="info-row-label">Average Wind Speed</span>
+    <span class="info-row-value">{{weatherInfo.average_windSpeed| number:'1.2-2' }}&nbsp;m/s</span>
+</div>
+<div class="info-row">
+    <span class="info-row-label">Average Visability</span>
+    <span class="info-row-value">{{weatherInfo.average_visability| number:'1.2-2' }}&nbsp;km</span>
+</div>
+<div *ngIf="weatherInfo.average_snow" class="info-row">
+    <span class="info-row-label">Average Snow</span>
+    <span class="info-row-value">{{weatherInfo.average_snow| number:'1.2-2' }}&nbsp;%</span>
+</div>
