@@ -1,3 +1,15 @@
+h1{
+    width: 100%;
+    text-align: center;
+}
+mat-list-option{
+    height: 45px !important;
+    margin: 5px;
+}
+mat-icon{
+    display: flex;
+    align-items: center;
+}
 .container{
     font-size: 14px;
     width: 100%;
@@ -11,7 +23,7 @@
     display: flex ;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0 10px 0;
+    padding: 3px 0 3px 0;
     &-label{
         font-size: 14px;
         text-align: left;
@@ -23,3 +35,5 @@
         text-align: right;
     };
 }
+
+

@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule} from '@angular/material/list';
 
 import { WeatherInfoBoxComponent } from './components/weather-info-box/weather-info-box.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
@@ -20,7 +21,7 @@ import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.c
     AppComponent,
     WeatherInfoBoxComponent,
     ErrorMessageComponent,
-    CityInfoBoxComponent
+    CityInfoBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,8 @@ import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.c
     MatInputModule,
     MatIconModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
