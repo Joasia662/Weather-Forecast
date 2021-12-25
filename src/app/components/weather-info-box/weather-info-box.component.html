@@ -1,19 +1,37 @@
+<h2>{{weatherInfo.date | date: 'EEEE, MMMM d, y'}}</h2>
+
 <div class="container">
     <div class="info-row">
-        <span class="info-row-label">Średnia temperatura</span>
-        <span class="info-row-value">{{weatherInfo.main?.temp}}</span>
+        <span class="info-row-label">Average Temperature</span>
+        <span class="info-row-value">{{weatherInfo.average_temp | number:'1.2-2'}}K</span>
     </div>
     <div class="info-row">
-        <span class="info-row-label">Odczuwalna temperatura</span>
-        <span class="info-row-value">{{weatherInfo.main?.feels_like}}</span>
+        <span class="info-row-label">Max Temperature</span>
+        <span class="info-row-value">{{weatherInfo.max_temp | number:'1.2-2'}}K</span>
     </div>
     <div class="info-row">
-        <span class="info-row-label">Wilgortoność</span>
-        <span class="info-row-value">{{weatherInfo.main?.humidity}}</span>
+        <span class="info-row-label">Min Temperature</span>
+        <span class="info-row-value">{{weatherInfo.min_temp| number:'1.2-2' }}K</span>
     </div>
     <div class="info-row">
-        <span class="info-row-label">Ciśnienie</span>
-        <span class="info-row-value">{{weatherInfo.main?.pressure}}</span>
+        <span class="info-row-label">Feels like Temperature</span>
+        <span class="info-row-value">{{weatherInfo.average_feels | number:'1.2-2'}}K</span>
+    </div>
+    <div class="info-row">
+        <span class="info-row-label">Average Humidity</span>
+        <span class="info-row-value">{{weatherInfo.average_humidity| number:'1.2-2' }}%</span>
+    </div>
+    <div class="info-row">
+        <span class="info-row-label">Average Wind Speed</span>
+        <span class="info-row-value">{{weatherInfo.average_windSpeed| number:'1.2-2' }}m/s</span>
+    </div>
+    <div class="info-row">
+        <span class="info-row-label">Average Visability</span>
+        <span class="info-row-value">{{weatherInfo.average_visability| number:'1.2-2' }}km</span>
+    </div>
+    <div *ngIf="weatherInfo.average_snow" class="info-row">
+        <span class="info-row-label">Average Snow</span>
+        <span class="info-row-value">{{weatherInfo.average_snow| number:'1.2-2' }}</span>
     </div>
 
 </div>

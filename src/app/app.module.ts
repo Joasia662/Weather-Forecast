@@ -6,9 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+
 import { WeatherInfoBoxComponent } from './components/weather-info-box/weather-info-box.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.component';
@@ -28,7 +30,8 @@ import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.c
     MatSliderModule,
     MatInputModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

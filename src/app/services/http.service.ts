@@ -19,7 +19,7 @@ export class ConfigService {
     buildURLQuery({q: city, appid: this.enviroment.api_key});
     */
   
-    let _url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + this.enviroment.api_key+ '&cnt=5';
+    let _url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + this.enviroment.api_key;
     return this.http.get<IForecast>(_url);
     // localhost url problem
     //return this.http.get<IForecast>(`${this.enviroment.http_url}/forecast?q:=${city}&appid${this.enviroment.api_key}`);

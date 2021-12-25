@@ -17,13 +17,10 @@
       <ng-container *ngIf="!weatherEmpty;else empty">
         <div>
           <app-city-info-box [cityInfo]="weatherInfo.city"></app-city-info-box>
-          </div>
-
-        <div class="section">
-          <span style="margin-right: 30px;" *ngFor="let item of weatherInfo?.list">
-            <app-weather-info-box [weatherInfo]=item></app-weather-info-box>
-          </span>
         </div>
+        <span  class="section">
+          <app-weather-info-box *ngFor="let day of days" [weatherInfo]="day"></app-weather-info-box>
+        </span>
       </ng-container>
     </span>
   </div>

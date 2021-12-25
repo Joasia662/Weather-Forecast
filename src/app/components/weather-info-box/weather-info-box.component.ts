@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IForecast, IForecastList } from 'src/app/interfaces/IWeather';
+import { IDayInfo } from 'src/app/interfaces/IDayInfo';
+import { IForecast, IForecastListElement } from 'src/app/interfaces/IWeather';
 
 @Component({
   selector: 'app-weather-info-box',
@@ -7,7 +8,7 @@ import { IForecast, IForecastList } from 'src/app/interfaces/IWeather';
   styleUrls: ['./weather-info-box.component.scss']
 })
 export class WeatherInfoBoxComponent implements OnInit {
-  @Input() weatherInfo: IForecastList= {};
+  @Input() weatherInfo: IDayInfo= ({} as any);
   constructor() {
    }
 
