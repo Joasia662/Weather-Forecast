@@ -24,9 +24,10 @@ export class AppComponent implements OnInit {
   }
 
   onSearchChange(city: string) {
-    if (city.length > 3 || city.length === 0) {
       this.getForecast(city);
-    }
+  }
+  onSearchClick() {
+      this.getForecast(this.searchValue);
   }
 
   getForecast(city: string) {

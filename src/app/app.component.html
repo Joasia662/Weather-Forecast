@@ -9,7 +9,7 @@
           <span matPrefix> </span>
           <input type="text" matInput placeholder="Search Weather For your City" name="search"
             (ngModelChange)="onSearchChange($event)" [(ngModel)]="searchValue">
-          <button matSuffix mat-button>
+          <button matSuffix mat-button (click)="onSearchClick()">
             <mat-icon>search</mat-icon>
           </button>
         </mat-form-field>

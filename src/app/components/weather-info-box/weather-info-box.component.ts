@@ -26,13 +26,6 @@ export class WeatherInfoBoxComponent implements OnInit {
   getSafeUrl(iconId: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(this.enviroment.pictures_url + iconId + "@2x.png");
   }
-
-  openHourDialog(hour: IForecastListElement): void {
-    const dialogRef = this.dialog.open(HourDetailsDailogComponent, {
-      width: '500px',
-      data: { hour: hour },
-    });
-  }
   
   openFullDayDialog(): void {
     const dialogRef = this.dialog.open(FullDayDialogComponent, {

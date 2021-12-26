@@ -1,29 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { IForecast } from '../interfaces/IWeather';
 import { environment } from 'src/environments/environment';
+import { Params } from '@angular/router';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 
 export class ConfigService {
-    enviroment = environment;
+  enviroment = environment;
   constructor(private http: HttpClient) { }
 
   getForecastByCity(city: string) {
-  
-    /*const buildURLQuery = obj =>
-      Object.entries(obj)
-            .map(pair => pair.map(encodeURIComponent).join('='))
-            .join('&');
+    let params = new HttpParams()
+    .set('q', city)
+    .set('appid', this.enviroment.api_key);
 
-    buildURLQuery({q: city, appid: this.enviroment.api_key});
-    */
-  
-    let _url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + this.enviroment.api_key;
-    return this.http.get<IForecast>(_url);
-    // localhost url problem
-    //return this.http.get<IForecast>(`${this.enviroment.http_url}/forecast?q:=${city}&appid${this.enviroment.api_key}`);
+    return this.http.get<IForecast>(`${this.enviroment.http_url}/forecast?q:=${city}&appid${this.enviroment.api_key}`, {params});
   }
 
-  
+
 }

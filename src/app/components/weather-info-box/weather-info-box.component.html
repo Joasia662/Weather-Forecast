@@ -1,8 +1,8 @@
 <h1>{{weatherInfo.date | date: 'EEEE, MMMM d, y'}}</h1>
 <div class="container">
-    <div>
+    <div class="weather-data">
         <mat-selection-list #shoes [multiple]="false">
-            <mat-list-option *ngFor="let hour of weatherInfo.hourPeriod" (click)="openHourDialog(hour)">
+            <mat-list-option *ngFor="let hour of weatherInfo.hourPeriod">
                 <mat-icon mat-list-icon>
                     <img [src]="getSafeUrl(hour.weather[0].icon)" height="40px" alt="weather">
                 </mat-icon>
@@ -11,7 +11,7 @@
             </mat-list-option>
         </mat-selection-list>
     </div>
-    <div>
+    <div class="see-more">
         <button mat-button  (click)="openFullDayDialog()">See Full Data</button>
     </div>
 </div>
