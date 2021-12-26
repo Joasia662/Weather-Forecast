@@ -5,15 +5,23 @@
     <div class="weather-data">
         <mat-selection-list #shoes [multiple]="false">
             <mat-list-option *ngFor="let hour of weatherInfo.hourPeriod">
-                <mat-icon mat-list-icon>
-                    <img [src]="getSafeUrl(hour.weather[0].icon)" height="40px" alt="weather">
-                </mat-icon>
-                <div mat-line> {{hour.weather[0].main}}</div>
-                <div mat-line> {{hour.dt_txt | date: 'HH:mm'}} </div>
+                <div class="list">
+                        <mat-icon mat-list-icon>
+                            <img [src]="getSafeUrl(hour.weather[0].icon)" height="40px" alt="weather">
+                        </mat-icon>
+                        <div>
+                            <div mat-line> {{hour.weather[0].main}}</div>
+                            <div mat-line> {{hour.dt_txt | date: 'HH:mm'}} </div>
+                        </div>
+                        <div>
+                            {{hour.main.temp}}&nbsp; °C
+                        </div>
+                    
+                </div>
             </mat-list-option>
         </mat-selection-list>
     </div>
     <div class="see-more">
-        <button mat-button  (click)="openFullDayDialog()">See Full Data</button>
+        <button mat-button (click)="openFullDayDialog()">See Full Data</button>
     </div>
 </div>

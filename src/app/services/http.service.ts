@@ -12,7 +12,8 @@ export class ConfigService {
   getForecastByCity(city: string) {
     let params = new HttpParams()
     .set('q', city)
-    .set('appid', this.enviroment.api_key);
+    .set('appid', this.enviroment.api_key)
+    .set('units', 'metric');
 
     return this.http.get<IForecast>(`${this.enviroment.http_url}/forecast?q:=${city}&appid${this.enviroment.api_key}`, {params});
   }
