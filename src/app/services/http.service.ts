@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IForecast } from '../interfaces/IWeather';
 import { environment } from 'src/environments/environment';
-import { Params } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 
