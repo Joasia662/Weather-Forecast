@@ -24,10 +24,10 @@ export class AppComponent implements OnInit {
   }
 
   onSearchChange(city: string) {
-      this.getForecast(city);
+    this.getForecast(city);
   }
   onSearchClick() {
-      this.getForecast(this.searchValue);
+    this.getForecast(this.searchValue);
   }
 
   getForecast(city: string) {

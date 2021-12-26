@@ -16,7 +16,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { WeatherInfoBoxComponent } from './components/weather-info-box/weather-info-box.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.component';
-import { HourDetailsDailogComponent } from './dialogs/hour-details-dailog/hour-details-dailog.component';
 import { FullDayDialogComponent } from './dialogs/full-day-dialog/full-day-dialog.component';
 
 import { ChartsModule } from 'ng2-charts';
@@ -26,7 +25,6 @@ import { ChartsModule } from 'ng2-charts';
     WeatherInfoBoxComponent,
     ErrorMessageComponent,
     CityInfoBoxComponent,
-    HourDetailsDailogComponent,
     FullDayDialogComponent,
   ],
   imports: [

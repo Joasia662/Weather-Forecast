@@ -2,9 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { FullDayDialogComponent } from 'src/app/dialogs/full-day-dialog/full-day-dialog.component';
-import { HourDetailsDailogComponent } from 'src/app/dialogs/hour-details-dailog/hour-details-dailog.component';
 import { IDayInfo } from 'src/app/interfaces/IDayInfo';
-import { IForecastListElement } from 'src/app/interfaces/IWeather';
 import { environment } from 'src/environments/environment';
 
 @Component({

@@ -1,4 +1,6 @@
-<h1>{{weatherInfo.date | date: 'EEEE, MMMM d, y'}}</h1>
+<div class="day-title">
+    <h1>{{weatherInfo.date | date: 'EEEE, d MMMM'}}</h1>
+</div>
 <div class="container">
     <div class="weather-data">
         <mat-selection-list #shoes [multiple]="false">

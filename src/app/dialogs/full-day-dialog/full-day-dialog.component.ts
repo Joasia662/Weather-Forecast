@@ -22,18 +22,30 @@ export class FullDayDialogComponent {
   public lineHumidityChartData: {
     data: number[];
     label: string;
+    backgroundColor?: string;
+    borderColor?: string;
+    pointBorderColor?: string;
+    pointBackgroundColor?: string;
   }[] = [];
 
   public linePressureChartLabels: string[] = [];
   public linePressureChartData: {
     data: number[];
     label: string;
+    backgroundColor?: string;
+    borderColor?: string;
+    pointBorderColor?: string;
+    pointBackgroundColor?: string;
   }[] = [];
 
   public lineWindSpeedChartLabels: string[] = [];
   public lineWindSpeedChartData: {
     data: number[];
     label: string;
+    backgroundColor?: string;
+    borderColor?: string;
+    pointBorderColor?: string;
+    pointBackgroundColor?: string;
   }[] = [];
 
   constructor(
@@ -42,7 +54,7 @@ export class FullDayDialogComponent {
   ) { }
 
   ngOnInit(): void {
-    this. getAverageValues();
+    this.getAverageValues();
     this.createLabels();
   }
 
@@ -77,7 +89,7 @@ export class FullDayDialogComponent {
     this.weatherInfo.average_visability = dataSum.visability / elementsNumber / 1000;
     this.weatherInfo.average_windSpeed = dataSum.windSpeed / elementsNumber;
     if (dataSum.snow != 0) this.weatherInfo.average_snow = dataSum.snow / elementsNumber;
-}
+  }
 
   createLabels() {
     this.humidity = {
@@ -116,10 +128,17 @@ export class FullDayDialogComponent {
     this.linePressureChartLabels = this.pressure.labels;
     this.lineWindSpeedChartLabels = this.windSpeed.labels;
 
-    this.lineHumidityChartData = [{ data: this.humidity.values, label: this.humidity.title }];
+    this.lineHumidityChartData = [{
+      data: this.humidity.values, label: this.humidity.title,
+      backgroundColor: 'rgba(80,170,80,0.4)', borderColor: 'rgba(80,125,0,0.4)', pointBorderColor: 'rgba(0,125,0,0.4)', pointBackgroundColor: 'rgba(0,125,0,0.4)'
+    }];
+    this.lineWindSpeedChartData = [{
+      data: this.windSpeed.values, label: this.windSpeed.title,
+      backgroundColor: 'rgba(16,159,255,0.4)', borderColor: 'rgba(76,144,253,0.8)', pointBorderColor: 'rgba(0,60,255,0.4)', pointBackgroundColor: 'rgba(0,60,255,0.4)'
+    }];
     this.linePressureChartData = [{ data: this.pressure.values, label: this.pressure.title }];
-    this.lineWindSpeedChartData = [{ data: this.windSpeed.values, label: this.windSpeed.title }];
 
     this.chartIsReady = true;
   }
+
 }
