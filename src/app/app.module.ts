@@ -10,8 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule} from '@angular/material/list';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { WeatherInfoBoxComponent } from './components/weather-info-box/weather-info-box.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
@@ -19,6 +19,7 @@ import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.c
 import { HourDetailsDailogComponent } from './dialogs/hour-details-dailog/hour-details-dailog.component';
 import { FullDayDialogComponent } from './dialogs/full-day-dialog/full-day-dialog.component';
 
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { FullDayDialogComponent } from './dialogs/full-day-dialog/full-day-dialo
     FormsModule,
     MatButtonModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

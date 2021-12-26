@@ -35,13 +35,11 @@ export class AppComponent implements OnInit {
         next: res => {
           this.weatherInfo = res;
           this.weatherEmpty = false;
-          this.setDays(new Date(this.weatherInfo.list[0].dt_txt)); 
+          this.setDays(new Date(this.weatherInfo.list[0].dt_txt));
           // We implement the initialization here, because the query made in the evening may return 5 consecutive days EXCLUDING the current one, but in rest cases it INCLUDES today
           this.weatherInfo.list.forEach(element => {
             this.separateDays(new Date(this.weatherInfo.list[0].dt_txt), element);
           });
-          this.getAverageValues();
-
         },
         error: ({ err }) => {
           this.weatherEmpty = true;
@@ -50,9 +48,7 @@ export class AppComponent implements OnInit {
   }
 
   setDays(startingDay: Date) {
- 
     for (let index = 0; index < this.days.length; index++) {
-     
       this.days[index] = {
         date: startingDay.toDateString(),
         average_temp: 0,
@@ -95,41 +91,4 @@ export class AppComponent implements OnInit {
       }
     }
   }
-
-  getAverageValues(): void {
-    this.days.forEach(day => {
-      let dataSum = {
-        feels: 0,
-        humidity: 0,
-        snow: 0,
-        temp: 0,
-        windSpeed: 0,
-        visability: 0,
-      }
-      day.min_temp = day.hourPeriod[0].main.temp_min;
-      day.max_temp = day.hourPeriod[0].main.temp_max;
-
-      day.hourPeriod.forEach(peroid => {
-        dataSum.feels += peroid.main.feels_like;
-        dataSum.humidity += peroid.main.humidity;
-        if(peroid.main.temp_max>=day.max_temp) day.max_temp= peroid.main.temp_max;
-        if(peroid.main.temp_min<=day.min_temp) day.min_temp= peroid.main.temp_max;
- 
-        dataSum.temp += peroid.main.temp;
-        if(peroid.snow) dataSum.snow += peroid.snow['3h'];
-        dataSum.visability += peroid.visibility;
-        dataSum.windSpeed += peroid.wind.gust;
-      });
-
-      let elementsNumber = day.hourPeriod.length;
-      day.average_feels = dataSum.feels / elementsNumber;
-      day.average_humidity = dataSum.humidity / elementsNumber;
-      day.average_temp = dataSum.temp / elementsNumber;
-      day.average_visability = dataSum.visability / elementsNumber/1000;
-      day.average_windSpeed = dataSum.windSpeed / elementsNumber;
-      if(dataSum.snow!=0) day.average_snow = dataSum.snow / elementsNumber;
-
-    });
-  }
-
 }

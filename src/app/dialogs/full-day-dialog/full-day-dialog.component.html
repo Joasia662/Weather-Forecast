@@ -1,3 +1,22 @@
+<div style="width: 100%; display: flex; justify-content: center;">
+    <span *ngIf="chartIsReady">
+        <span class="width:100%" style="display: block ">
+            <canvas baseChart [datasets]="linePressureChartData" [labels]="linePressureChartLabels"
+                [legend]="lineChartLegend" [chartType]="lineChartType">
+            </canvas>
+        </span>
+        <span style="display: block">
+            <canvas baseChart [datasets]="lineHumidityChartData" [labels]="lineHumidityChartLabels"
+                [legend]="lineChartLegend" [chartType]="lineChartType" width="400px">
+            </canvas>
+        </span>
+        <span style="display: block">
+            <canvas baseChart [datasets]="lineWindSpeedChartData" [labels]="lineWindSpeedChartLabels"
+                [legend]="lineChartLegend" [chartType]="lineChartType" width="400px">
+            </canvas>
+        </span>
+    </span>
+</div>
 <div class="info-row">
     <span class="info-row-label">Average Temperature</span>
     <span class="info-row-value">{{weatherInfo.average_temp | number:'1.2-2'}}&nbsp;K</span>

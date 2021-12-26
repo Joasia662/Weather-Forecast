@@ -7,7 +7,7 @@ import { IForecastCityInfo } from 'src/app/interfaces/IWeather';
   styleUrls: ['./city-info-box.component.scss']
 })
 export class CityInfoBoxComponent implements OnInit {
-  @Input() cityInfo:IForecastCityInfo = {
+  @Input() cityInfo: IForecastCityInfo = {
     id: 0,
     name: '',
     coord: {
@@ -23,8 +23,8 @@ export class CityInfoBoxComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.cityInfo.sunrise+=1000;
-    this.cityInfo.sunset+=1000;
+    this.cityInfo.sunrise += 1000;
+    this.cityInfo.sunset += 1000;
   }
 
 }

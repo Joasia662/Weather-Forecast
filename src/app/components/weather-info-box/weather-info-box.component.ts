@@ -33,10 +33,11 @@ export class WeatherInfoBoxComponent implements OnInit {
       data: { hour: hour },
     });
   }
+  
   openFullDayDialog(): void {
     const dialogRef = this.dialog.open(FullDayDialogComponent, {
-      width: '700px',
-      data:  this.weatherInfo ,
+      width: '500px',
+      data: this.weatherInfo,
     });
   }
 }
