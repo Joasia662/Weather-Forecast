@@ -2,7 +2,7 @@
     <span *ngIf="chartIsReady">
         <span class="width:100%" style="display: block ">
             <canvas baseChart [datasets]="linePressureChartData"  [labels]="linePressureChartLabels"
-                [legend]="lineChartLegend" [chartType]="lineChartType" style="borderColor: blue;">
+                [legend]="lineChartLegend" [chartType]="lineChartType" width="400px">
             </canvas>
         </span>
         <span style="display: block">
