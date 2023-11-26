@@ -18,7 +18,7 @@ import { ErrorMessageComponent } from './components/error-message/error-message.
 import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.component';
 import { FullDayDialogComponent } from './dialogs/full-day-dialog/full-day-dialog.component';
 
-import { ChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,7 @@ import { ChartsModule } from 'ng2-charts';
     MatButtonModule,
     MatListModule,
     MatDialogModule,
-    ChartsModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

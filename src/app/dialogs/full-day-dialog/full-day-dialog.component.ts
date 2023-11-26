@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IChartData } from 'src/app/interfaces/IChartData';
 import { IDayInfo } from 'src/app/interfaces/IDayInfo';
+import { ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-full-day-dialog',
@@ -15,7 +16,7 @@ export class FullDayDialogComponent {
   pressure: IChartData = ({} as any);
   windSpeed: IChartData = ({} as any);
 
-  public lineChartType = 'line' as Chart.ChartType;
+  public lineChartType: ChartType = "line";
   public lineChartLegend = true;
 
   public lineHumidityChartLabels: string[] = [];
