@@ -1,5 +1,12 @@
 # WeatherForecast
 
+App that display weather dorecast based on API: https://openweathermap.org/forecast5
+
+![image](https://user-images.githubusercontent.com/60195641/148315630-30974370-e0c8-4156-9ca0-378365a1b850.png)
+
+## Used Icons author:
+https://www.freepik.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## Development server
