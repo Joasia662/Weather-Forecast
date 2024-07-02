@@ -19,6 +19,7 @@ import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.c
 import { FullDayDialogComponent } from './dialogs/full-day-dialog/full-day-dialog.component';
 
 import { NgChartsModule } from 'ng2-charts';
+import { CelsiusPipe } from './pipes/celsius.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatListModule,
     MatDialogModule,
     NgChartsModule,
+    CelsiusPipe
   ],
   providers: [],
   bootstrap: [AppComponent]

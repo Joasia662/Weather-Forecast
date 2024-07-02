@@ -1,16 +1,16 @@
 <div class="wrapper">
     <span *ngIf="chartIsReady">
         <div style="width: 23vw; display: flex; justify-content: center;">
-            <canvas baseChart [datasets]="linePressureChartData"  [labels]="linePressureChartLabels"
+            <canvas baseChart [datasets]="linePressureChartData" [labels]="linePressureChartLabels"
                 [legend]="lineChartLegend" [type]="lineChartType" width="400px">
             </canvas>
         </div>
         <div style="width: 23w; display: flex; justify-content: center;">
             <canvas baseChart [datasets]="lineHumidityChartData" [labels]="lineHumidityChartLabels"
-                [legend]="lineChartLegend" [type]="lineChartType" >
+                [legend]="lineChartLegend" [type]="lineChartType">
             </canvas>
         </div>
-        <div style="width: 23vw; display: flex; justify-content: center;" >
+        <div style="width: 23vw; display: flex; justify-content: center;">
             <canvas baseChart [datasets]="lineWindSpeedChartData" [labels]="lineWindSpeedChartLabels"
                 [legend]="lineChartLegend" [type]="lineChartType">
             </canvas>
@@ -23,19 +23,19 @@
 
     <div class="info-row">
         <span class="info-row-label">Average Temperature</span>
-        <span class="info-row-value">{{weatherInfo.average_temp | number:'1.2-2'}}&nbsp; °C</span>
+        <span class="info-row-value">{{weatherInfo.average_temp | number:'1.2-2' | celsius}}</span>
     </div>
     <div class="info-row">
         <span class="info-row-label">Max Temperature</span>
-        <span class="info-row-value">{{weatherInfo.max_temp | number:'1.2-2'}}&nbsp; °C</span>
+        <span class="info-row-value">{{weatherInfo.max_temp | number:'1.2-2' | celsius}}</span>
     </div>
     <div class="info-row">
         <span class="info-row-label">Min Temperature</span>
-        <span class="info-row-value">{{weatherInfo.min_temp| number:'1.2-2' }}&nbsp; °C</span>
+        <span class="info-row-value">{{weatherInfo.min_temp| number:'1.2-2' | celsius}}</span>
     </div>
     <div class="info-row">
         <span class="info-row-label">Feels like Temperature</span>
-        <span class="info-row-value">{{weatherInfo.average_feels | number:'1.2-2'}}&nbsp; °C</span>
+        <span class="info-row-value">{{weatherInfo.average_feels | number:'1.2-2' | celsius}}</span>
     </div>
     <div class="info-row">
         <span class="info-row-label">Average Humidity</span>
