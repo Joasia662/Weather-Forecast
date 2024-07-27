@@ -10,10 +10,10 @@
                             <img [src]="getSafeUrl(hour.weather[0].icon)" height="40px" alt="weather">
                         </mat-icon>
                         <div>
-                            <div mat-line> {{hour.weather[0].main}}</div>
-                            <div mat-line> {{hour.dt_txt | date: 'HH:mm'}} </div>
+                            <div class="list-label" mat-line> {{hour.weather[0].main}}</div>
+                            <div class="list-label"mat-line> {{hour.dt_txt | date: 'HH:mm'}} </div>
                         </div>
-                        <div>
+                        <div class="list-label">
                             {{hour.main.temp | celsius}}
                         </div>
                     
