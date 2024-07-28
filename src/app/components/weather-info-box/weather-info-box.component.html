@@ -1,5 +1,5 @@
 <div class="day-title">
-    <h2>{{weatherInfo.date | date: 'EEEE, d MMMM'}}</h2>
+    <h2 aria-label="Day Info" >{{weatherInfo.date | date: 'EEEE, d MMMM'}}</h2>
 </div>
 <div class="container">
     <div class="weather-data">
@@ -9,11 +9,11 @@
                     <mat-icon mat-list-icon>
                         <img [src]="getSafeUrl(hour.weather[0].icon)" height="40px" alt="weather">
                     </mat-icon>
-                    <div calss="list-desc">
-                        <div class="list-desc-label" mat-line> {{hour.weather[0].main}}</div>
-                        <div class="list-desc-label" mat-line> {{hour.dt_txt | date: 'HH:mm'}} </div>
+                    <div aria-label="Weather information" calss="list-desc">
+                        <div aria-label="Weather Description" class="list-desc-label"> {{hour.weather[0].main}}</div>
+                        <div aria-label="Weather Hour" class="list-desc-label"> {{hour.dt_txt | date: 'HH:mm'}} </div>
                     </div>
-                    <div class="list-desc-label list-temp">
+                    <div aria-label="Weather Temperature" class="list-desc-label list-temp">
                         {{hour.main.temp | number : '1.2-2'| celsius }}
                     </div>
 
