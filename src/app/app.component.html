@@ -18,7 +18,7 @@
         <div>
           <app-city-info-box [cityInfo]="weatherInfo.city"></app-city-info-box>
         </div>
-        <span  class="section">
+        <span class="section">
           <app-weather-info-box *ngFor="let day of days" [weatherInfo]="day"></app-weather-info-box>
         </span>
       </ng-container>

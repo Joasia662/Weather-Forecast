@@ -1,9 +1,9 @@
-
-app-weather-info-box{
+app-weather-info-box {
     width: 235px;
 }
+
 .page {
-    background: linear-gradient( to right bottom, #ffba08 ,#9d0208);
+    background: linear-gradient(to right bottom, #ffba08, #9d0208);
     height: 100%;
     display: flex;
     align-items: center;
@@ -14,18 +14,23 @@ app-weather-info-box{
     background: white;
     height: 93%;
     width: 90%;
-    background: linear-gradient( to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     display: flex;
     justify-content: center;
     padding: 10px;
-    &-content{
+
+    &-content {
         width: 100%;
         text-align: center;
         align-items: center;
     }
 }
-
-.section{
+.loading{
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+.section {
     font-size: 32px;
     font-weight: 500;
     width: 100% !important;
@@ -33,13 +38,12 @@ app-weather-info-box{
     max-height: 60%;
     display: flex !important;
     justify-content: space-evenly;
+
 }
 
-.title{
+.title {
     font-size: 35px;
     margin: 20px;
     font-weight: 500px;
     color: #03071e;
 }
-
-

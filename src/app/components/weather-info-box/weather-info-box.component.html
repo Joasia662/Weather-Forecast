@@ -3,22 +3,22 @@
 </div>
 <div class="container">
     <div class="weather-data">
-        <mat-selection-list #shoes [multiple]="false">
-            <mat-list-option *ngFor="let hour of weatherInfo.hourPeriod">
+        <mat-selection-list [multiple]="false">
+            <mat-list *ngFor="let hour of weatherInfo.hourPeriod">
                 <div class="list">
-                        <mat-icon mat-list-icon>
-                            <img [src]="getSafeUrl(hour.weather[0].icon)" height="40px" alt="weather">
-                        </mat-icon>
-                        <div>
-                            <div class="list-label" mat-line> {{hour.weather[0].main}}</div>
-                            <div class="list-label"mat-line> {{hour.dt_txt | date: 'HH:mm'}} </div>
-                        </div>
-                        <div class="list-label">
-                            {{hour.main.temp | celsius}}
-                        </div>
-                    
+                    <mat-icon mat-list-icon>
+                        <img [src]="getSafeUrl(hour.weather[0].icon)" height="40px" alt="weather">
+                    </mat-icon>
+                    <div calss="list-desc">
+                        <div class="list-desc-label" mat-line> {{hour.weather[0].main}}</div>
+                        <div class="list-desc-label" mat-line> {{hour.dt_txt | date: 'HH:mm'}} </div>
+                    </div>
+                    <div class="list-desc-label list-temp">
+                        {{hour.main.temp | number : '1.2-2'| celsius }}
+                    </div>
+
                 </div>
-            </mat-list-option>
+            </mat-list>
         </mat-selection-list>
     </div>
     <div class="see-more">

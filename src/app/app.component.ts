@@ -12,13 +12,14 @@ export class AppComponent implements OnInit {
   title = 'weather-forecast';
   searchValue = 'Kraków';
   weatherEmpty = true;
-
   weatherInfo: IForecast = ({} as any);
   days = new Array<IDayInfo>(5);
+
 
   constructor(
     private api: ConfigService
   ) { }
+
   ngOnInit() {
     this.getForecast('Kraków');
   }
@@ -74,19 +75,19 @@ export class AppComponent implements OnInit {
         this.days[0].hourPeriod.push(element);
         break;
       }
-      case (startingDate.getDate() + 1): {
+      case (new Date(this.days[1].date).getDate()): {
         this.days[1].hourPeriod.push(element);
         break;
       }
-      case (startingDate.getDate() + 2): {
+      case (new Date(this.days[2].date).getDate()): {
         this.days[2].hourPeriod.push(element);
         break;
       }
-      case (startingDate.getDate() + 3): {
+      case (new Date(this.days[3].date).getDate()): {
         this.days[3].hourPeriod.push(element);
         break;
       }
-      case (startingDate.getDate() + 4): {
+      case (new Date(this.days[4].date).getDate()): {
         this.days[4].hourPeriod.push(element);
         break;
       }

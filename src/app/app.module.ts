@@ -12,14 +12,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { WeatherInfoBoxComponent } from './components/weather-info-box/weather-info-box.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { CityInfoBoxComponent } from './components/city-info-box/city-info-box.component';
 import { FullDayDialogComponent } from './dialogs/full-day-dialog/full-day-dialog.component';
 
+
 import { NgChartsModule } from 'ng2-charts';
 import { CelsiusPipe } from './pipes/celsius.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,8 @@ import { CelsiusPipe } from './pipes/celsius.pipe';
     MatListModule,
     MatDialogModule,
     NgChartsModule,
-    CelsiusPipe
+    CelsiusPipe,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
