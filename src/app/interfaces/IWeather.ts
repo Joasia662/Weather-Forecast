@@ -36,7 +36,10 @@ export interface IForecastListElement {
     },
     visibility: number;
     pop: number;
-    snow: {
+    snow?: {
+        '3h': number;
+    },
+    rain?: {
         '3h': number;
     },
     sys: {

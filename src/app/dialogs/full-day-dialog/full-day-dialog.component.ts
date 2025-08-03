@@ -56,6 +56,8 @@ export class FullDayDialogComponent {
 
   ngOnInit(): void {
     this.getAverageValues();
+    console.log(this.weatherInfo)
+
     this.createLabels();
   }
 

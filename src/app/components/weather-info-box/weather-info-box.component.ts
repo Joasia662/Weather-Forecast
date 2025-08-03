@@ -24,8 +24,9 @@ export class WeatherInfoBoxComponent implements OnInit {
   getSafeUrl(iconId: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(this.enviroment.pictures_url + iconId + "@2x.png");
   }
-  
+
   openFullDayDialog(): void {
+    console.log(this.weatherInfo)
     const dialogRef = this.dialog.open(FullDayDialogComponent, {
       width: '500px',
       data: this.weatherInfo,
