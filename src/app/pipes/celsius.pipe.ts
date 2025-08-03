@@ -4,7 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
     standalone: true,
 })
 export class CelsiusPipe implements PipeTransform {
-    transform(value: any): string {
-        return `${value} °C`;
+    transform(value: number | string | null): string {
+        if (value !== "" && value != undefined && value != null && !Number.isNaN(value)) return `${value} °C`
+        else return `${value}`
     }
 }

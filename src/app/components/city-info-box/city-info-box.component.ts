@@ -27,6 +27,7 @@ export class CityInfoBoxComponent implements OnInit {
   ngOnInit(): void {
     this.sunrise= new Date(this.cityInfo.sunrise*1000)
     this.sunset = new Date(this.cityInfo.sunset*1000)
+    console.log(this.sunset)
   }
 
 }
