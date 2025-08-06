@@ -26,7 +26,6 @@ export class WeatherInfoBoxComponent implements OnInit {
   }
 
   openFullDayDialog(): void {
-    console.log(this.weatherInfo)
     const dialogRef = this.dialog.open(FullDayDialogComponent, {
       width: '500px',
       data: this.weatherInfo,

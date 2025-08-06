@@ -7,8 +7,9 @@
       <div>
         <mat-form-field class="example-full-width">
           <span matPrefix> </span>
-          <input type="text" id="buttonSearch" aria-label="BntSearch" matInput placeholder="Search Weather For your City" name="search"
-            (ngModelChange)="onSearchChange($event)" [(ngModel)]="searchValue">
+          <input type="text" id="buttonSearch" aria-label="BntSearch" matInput
+            placeholder="Search Weather For your City" name="search" (ngModelChange)="onSearchChange($event)"
+            [(ngModel)]="searchValue">
           <button matSuffix mat-button (click)="onSearchClick()">
             <mat-icon>search</mat-icon>
           </button>

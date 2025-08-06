@@ -3,6 +3,7 @@ import { FullDayDialogComponent } from "./full-day-dialog.component";
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { CelsiusPipe } from "src/app/pipes/celsius.pipe";
+import { By } from "@angular/platform-browser";
 
 
 describe('FullDayDialogComponent (shallow tests)', () => {
@@ -374,6 +375,27 @@ describe('FullDayDialogComponent (shallow tests)', () => {
         expect(fixture.componentInstance.weatherInfo.average_windSpeed).toBeCloseTo(3.85);
 
     })
+
+    it('should render Average Temperature and it should be the first item', () => {
+
+        fixture.detectChanges();
+
+        let de = fixture.debugElement.queryAll(By.css('.info-row'))[0]
+        
+        expect(de.nativeElement.textContent).toContain('Average Temperature18.59 °C')
+
+    })
+
+    it('should render Max Temperature and it should be the second  item', () => {
+
+        fixture.detectChanges();
+
+        let de = fixture.debugElement.queryAll(By.css('.info-row'))[1]
+
+        expect(de.nativeElement.textContent).toContain('Max Temperature24.88 °C')
+
+    })
+
 
 
 })
